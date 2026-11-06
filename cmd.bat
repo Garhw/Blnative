@@ -93,6 +93,3 @@ cd ..
 cd ..
 cd c:\
 echo y | REG DELETE "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\DWAgent" /f
-net stop DWAgent
-
-net stop DWAgent
